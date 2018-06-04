@@ -8,7 +8,7 @@ like:
  - `users/id`
  - `messages`
  - `messages/id`
- 
+
 Just like WP, but way more flexible. A tricky thing is that you can change the structure at any time, even by accident :)
 
 ### 2. Create a new project
@@ -24,29 +24,38 @@ Beware, this is not recommended for production, a database without authenticatio
 
 ## CRUD - Create, Read, Update, Delete
 In our JS file, get a reference to the database
-`const database = firebase.database();`
+```javascript
+const database = firebase.database();
+```
 
 ### 1. Create - Inserting data
 https://firebase.google.com/docs/database/web/read-and-write?authuser=0
 
-`database.ref(path).push(obj)`
+```javascript
+database.ref(path).push(obj)
+```
 
 e.g.
 
-`database.ref('users/').push({name:"Jonas", email: "jofh[at].kea.dk"})`
+```javascript
+database.ref('users/').push({name:"Jonas", email: "jofh[at].kea.dk"})
+```
 
 ### 2. Update - Overwrite existing data
 Using `.set()` overwrites data at the specified location, including any child nodes.
-`database.ref(path).set(data);`
+
+```javascript
+database.ref(path).set(data);
+```
 
 e.g.
 
-`database.ref('users/someid').set({name: "Jonas Holbech", email:"jofh[at].kea.dk"});`
+```javascript
+database.ref('users/someid').set({name: "Jonas Holbech", email:"jofh[at].kea.dk"});
+```
 
 ### 3. Read - Get data
-### Play around with the endpoint path and mess it all up
 https://firebase.google.com/docs/database/web/lists-of-data?authuser=0#listen_for_child_events
-
 
 ```javascript
 database.ref(path).on(event, callback)
@@ -63,11 +72,16 @@ database.ref('users/').on('child_added', snapshot=>{
 ### 4. Delete - Remove content
 Deletes an "endpoint" and all children
 
-`database.ref(path).remove();`
+```javascript
+database.ref(path).remove();
+```
 
 e.g.
 
-`database.ref('users/someid').remove()`
+
+```javascript
+database.ref('users/someid').remove()
+```
 
 ## Links: 
  - https://firebase.google.com/docs/web/setup
