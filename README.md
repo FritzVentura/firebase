@@ -8,6 +8,7 @@ like:
  - `users/id`
  - `messages`
  - `messages/id`
+ 
 Just like WP, but way more flexible. A tricky thing is that you can change the structure at any time, even by accident :)
 
 ### 2. Create a new project
