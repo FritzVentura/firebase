@@ -32,6 +32,23 @@
         display: block;
         
     }
+
+    button{
+        border-radius: 20px;
+        border-style: none;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .delete{
+        background: rgb(218, 61, 61);
+    }
+
+    .edit{
+        background: rgb(61, 218, 100);
+    }
+
+
 </style>
 
 </head>
@@ -58,6 +75,10 @@
         <article>
             <h1></h1>
             <div class="description"></div>
+            <footer>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </footer>
         </article>
     </template>
     

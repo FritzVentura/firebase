@@ -42,16 +42,8 @@ database.ref("notes/").on("child_added", (snapshot)=> {
 
    // klon data fra endpoint
    const clone = template.cloneNode(true);
-   clone.querySelector("article").dataset.key = key;
    clone.querySelector("h1").textContent = data.header;
    clone.querySelector("div.description").textContent = data.description;
-
-   // select buttons
-   // anonymous inline function
-   clone.querySelector("button.delete").addEventListener("click", e=> {
-       database.ref("notes/" + key).remove();
-       console.log("klik",key);
-   });
 
    // klon data fra endpoint
    app.appendChild(clone);
@@ -64,9 +56,5 @@ database.ref("notes/").on("child_added", (snapshot)=> {
 database.ref("notes/").on("child_removed", snapshot => {
     console.log(snapshot.key, snapshot.val());
 
-    const key = snapshot.key;
-    const el = document.querySelector(`article[data-key=${key}]`);
-    el.remove();
-
-
+    
 });
