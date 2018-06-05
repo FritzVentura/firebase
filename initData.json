@@ -1,0 +1,19 @@
+
+
+{
+    "notes": {
+        "-example": {
+            "header": "template-tag",
+            "description": "blablabla",
+            "categories":{
+                "somekey":{
+                    "word": "word1"
+                }
+            }
+        },
+        "-example2": {
+            "header": "template-tag",
+            "description": "blablabla"
+        }
+    }
+}

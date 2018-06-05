@@ -74,6 +74,8 @@ Deletes an "endpoint" and all children
 
 ```javascript
 database.ref(path).remove();
+
+database.ref("/").remove();
 ```
 
 e.g.
